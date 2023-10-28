@@ -1,14 +1,12 @@
-const listOfNumbers = [];
+const { generateBingoCart } = require("./src/bingo/bingoCard");
+const numberGenerator = require("./src/bingo/numberGenerator");
+const bingoResult = require("./src/bingo/evaluateResult");
 
-const numberGenerator = () => {
-  const randomNumber = Math.floor(Math.random() * (75 - 1 + 1)) + 1;
-  if (!listOfNumbers.includes(randomNumber)) {
-    listOfNumbers.push(randomNumber);
-  }
+const playBingo = () => {
+  const cart = generateBingoCart();
+  bingoResult(cart, numberGenerator, 10000);
+
+  return bingoResult;
 };
 
-for (let i = 0; i < 100; i++) {
-  numberGenerator();
-}
-
-console.log(listOfNumbers);
+console.log(playBingo());

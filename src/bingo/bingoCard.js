@@ -19,7 +19,7 @@ const generateColumn = (min, max) => {
 
   while (column.length < 5) {
     const number = Math.floor(Math.random() * (max - min + 1) + min);
-    if (!column.includes.number) {
+    if (!column.includes(number)) {
       column.push(number);
     }
   }
@@ -42,4 +42,8 @@ const transposeMatrix = (matrix) => {
   return result;
 };
 
-console.log(generateBingoCart());
+module.exports = {
+  generateBingoCart,
+  generateColumn,
+  transposeMatrix,
+};
