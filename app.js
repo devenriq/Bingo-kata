@@ -4,7 +4,7 @@ const bingoResult = require("./src/bingo/evaluateResult");
 
 const playBingo = () => {
   const cart = generateBingoCart();
-  bingoResult(cart, numberGenerator, 10000);
+  bingoResult(cart, numberGenerator, 1);
 
   return bingoResult;
 };
